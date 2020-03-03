@@ -15,7 +15,7 @@ require 'rake/extensiontask'
 Hoe.spec "inside" do
   developer("Mohsen Alizadeh", "mohsen@alizadeh.us")
 
-  self.extra_dev_deps << ['rake-compiler', '>= 0']
+  self.extra_dev_deps << ['rake-compiler', '~> 1.1.0']
   self.spec_extras = { :extensions => ["ext/inside/extconf.rb"] }
 
   Rake::ExtensionTask.new('inside', spec) do |ext|
