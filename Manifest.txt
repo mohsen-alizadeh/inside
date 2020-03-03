@@ -5,4 +5,5 @@ README.txt
 Rakefile
 bin/inside
 lib/inside.rb
+lib/inside/version.rb
 test/test_inside.rb

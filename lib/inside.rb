@@ -1,5 +1,6 @@
 require 'inside/inside'
+require 'inside/version'
 
 module Inside
-  VERSION = "1.0.0"
+
 end
