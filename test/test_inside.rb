@@ -3,9 +3,9 @@ require "minitest/autorun"
 require "inside"
 
 class TestInside < Minitest::Test
-  def test_sanity
-    puts "methods"
-    puts Inside.public_instance_methods.inspect
-    assert_equal 'hello world', Inside.hello_world
+  def test_parse
+    ast = Inside.parse("1 + 1")
+    pp "ast:"
+    pp ast
   end
 end
