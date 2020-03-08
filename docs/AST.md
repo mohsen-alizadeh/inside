@@ -11,12 +11,14 @@ ruby parses program's code and generate a syntax tree called AST. List of node t
   nd_args | NODE | u3.node
 
 * NODE_BLOCK
+
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
   nd_head | NODE | u1.node
   nd_next | NODE | u3.node
 
 * NODE_IF
+
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
   nd_cond | NODE | u1.node
@@ -24,6 +26,7 @@ ruby parses program's code and generate a syntax tree called AST. List of node t
   nd_else | NODE | u3.node
 
 * NODE_UNLESS
+
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
   nd_cond | NODE | u1.node
