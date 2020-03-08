@@ -34,183 +34,320 @@ ruby parses program's code and generate a syntax tree called AST. List of node t
   nd_else | NODE | u3.node
 
 * NODE_CASE
+
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
+  nd_head | NODE | u1.node
+  nd_body | NODE | u2.node
+
 * NODE_CASE2
+
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
+  nd_head | NODE | u1.node
+  nd_body | NODE | u2.node
+
 * NODE_CASE3
+
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
+  nd_head | NODE | u1.node
+  nd_body | NODE | u2.node
+
 * NODE_WHEN
+
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
+  nd_head | NODE | u1.node
+  nd_body | NODE | u2.node
+  nd_next | NODE | u3.node
+
 * NODE_IN
+
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
+  nd_head | NODE | u1.node
+  nd_body | NODE | u2.node
+  nd_next | NODE | u3.node
+
 * NODE_WHILE
+
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
+  nd_cond | NODE | u1.node
+  nd_body | NODE | u2.node
+
 * NODE_UNTIL
+
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
+  nd_cond | NODE | u1.node
+  nd_body | NODE | u2.node
+
 * NODE_ITER
+
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
+  nd_iter | NODE | u3.node
+  nd_body | NODE | u2.node
+
 * NODE_FOR
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
+  nd_iter | NODE | u3.node
+  nd_body | NODE | u2.node
+
 * NODE_FOR_MASGN
+
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
+
 * NODE_BREAK
+
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
+
 * NODE_NEXT
+
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
+
 * NODE_REDO
+
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
+
 * NODE_RETRY
+
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
+
 * NODE_BEGIN
+
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
+
 * NODE_RESCUE
+
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
+
 * NODE_RESBODY
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
+
 * NODE_ENSURE
+
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
+
 * NODE_AND
+
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
+
 * NODE_OR
+
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
+
 * NODE_MASGN
+
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
+
 * NODE_LASGN
+
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
+
 * NODE_DASGN
+
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
+
 * NODE_DASGN_CURR
+
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
+
 * NODE_GASGN
+
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
+
 * NODE_IASGN
+
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
+
 * NODE_CDECL
+
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
+
 * NODE_CVASGN
+
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
+
 * NODE_OP_ASGN1
+
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
+
 * NODE_OP_ASGN2
+
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
+
 * NODE_OP_ASGN_AND
+
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
+
 * NODE_OP_ASGN_OR
+
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
+
 * NODE_OP_CDECL
+
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
+
 * NODE_CALL
+
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
+
 * NODE_OPCALL
+
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
+
 * NODE_FCALL
+
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
+
 * NODE_VCALL
+
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
+
 * NODE_QCALL
+
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
+
 * NODE_SUPER
+
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
+
 * NODE_ZSUPER
+
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
+
 * NODE_LIST
+
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
+
 * NODE_ZLIST
+
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
+
 * NODE_VALUES
+
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
+
 * NODE_HASH
+
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
+
 * NODE_RETURN
+
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
+
 * NODE_YIELD
+
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
+
 * NODE_LVAR
+
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
+
 * NODE_DVAR
+
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
+
 * NODE_GVAR
+
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
+
 * NODE_IVAR
+
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
+
 * NODE_CONST
+
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
+
 * NODE_CVAR
+
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
+
 * NODE_NTH_REF
+
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
+
 * NODE_BACK_REF
+
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
+
 * NODE_MATCH
+
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
+
 * NODE_MATCH2
+
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
+
 * NODE_MATCH3
+
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
+
 * NODE_LIT
+
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
+
 * NODE_STR
+
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
+
 * NODE_DSTR
+
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
 * NODE_XSTR
