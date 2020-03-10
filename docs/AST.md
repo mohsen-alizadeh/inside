@@ -249,61 +249,61 @@ ruby parses program's code and generate a syntax tree called AST. List of node t
 
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
-  nd_head|
-  nd_value|
+  nd_head | NODE |u1.node
+  nd_val | NODE | u2.node
 
 
 * NODE_OP_ASGN_OR
 
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
-  nd_head|
-  nd_value|
+  nd_head | NODE |u1.node
+  nd_val | NODE | u2.node
 
 * NODE_OP_CDECL
 
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
-  nd_head|
+  nd_head | NODE |u1.node
   nd_aid|
-  nd_value|
+  nd_val | NODE | u2.node
 
 * NODE_CALL
 
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
-  nd_recv|
-  nd_mid|
-  nd_args|
+  nd_recv | NODE |u1.node
+  nd_mid | ID | u2.id
+  nd_args | NODE |u3.node
 
 * NODE_OPCALL
 
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
-  nd_recv|
-  nd_mid|
-  nd_args|
+  nd_recv | NODE |u1.node
+  nd_mid | ID | u2.id
+  nd_args | NODE |u3.node
 
 * NODE_FCALL
 
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
-  nd_mid|
-  nd_args|
+  nd_mid | ID | u2.id
+  nd_args | NODE |u3.node
 
 * NODE_VCALL
 
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
-  nd_mid|
+  nd_mid | ID | u2.id
 
 * NODE_QCALL
 
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
-  nd_recv|
-  nd_mid|
-  nd_args|
+  nd_recv | NODE |u1.node
+  nd_mid | ID | u2.id
+  nd_args | NODE |u3.node
 
 * NODE_SUPER
 
@@ -314,14 +314,14 @@ ruby parses program's code and generate a syntax tree called AST. List of node t
 
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
-  nd_args| 
+  nd_args | NODE |u3.node 
 
 * NODE_LIST
 
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
-  nd_head|
-  nd_next|
+  nd_head | NODE |u1.node
+  nd_next | NODE |u2.node
 
 * NODE_ZLIST
 
@@ -333,14 +333,14 @@ TODO:
 
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
-  nd_head|
-  nd_next|
+  nd_head | NODE |u1.node
+  nd_next | NODE |u2.node
 
 * NODE_HASH
 
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
-  nd_head|
+  nd_head | NODE |u1.node
 
 * NODE_RETURN
 
@@ -352,54 +352,50 @@ TODO:
 
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
-  nd_head|
+  nd_head | NODE |u1.node
 
 * NODE_LVAR
 
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
-  nd_vid|
+  nd_vid | ID | u1.id
 
 * NODE_DVAR
 
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
-  nd_vid|
+  nd_vid | ID | u1.id
 
 * NODE_GVAR
 
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
-  nd_vid|
+  nd_vid | ID | u1.id
 
 * NODE_IVAR
 
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
-  nd_vid|
+  nd_vid | ID | u1.id
 
 * NODE_CONST
 
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
-  nd_vid|
+  nd_vid | ID | u1.id
 
 * NODE_CVAR
 
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
-  nd_vid|
+  nd_vid | ID | u1.id
 
 * NODE_NTH_REF
-
-TODO:
 
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
 
 * NODE_BACK_REF
-
-TODO:
 
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
@@ -408,82 +404,82 @@ TODO:
 
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
-  nd_lit|
+  nd_lit | VALUE |h1.value
 
 * NODE_MATCH2
 
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
-  nd_recv|
-  nd_value|
-  nd_args|
+  nd_recv | NODE |u1.node
+  nd_val | NODE | u2.node
+  nd_args | NODE |u3.node
 
 * NODE_MATCH3
 
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
-  nd_recv|
-  nd_value|
+  nd_recv | NODE |u1.node
+  nd_val | NODE | u2.node
 
 * NODE_LIT
 
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
-  nd_lit|
+  nd_lit | VALUE |h1.value
 
 * NODE_STR
 
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
-  nd_lit|
+  nd_lit | VALUE |h1.value
 
 * NODE_DSTR
 
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
-  nd_lit|
-  nd_head|
-  nd_next|
+  nd_lit | VALUE |h1.value
+  nd_head | NODE |u1.node
+  nd_next | NODE |u2.node
 
 * NODE_XSTR
 
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
-  nd_lit|
+  nd_lit | VALUE |h1.value
 
 * NODE_DXSTR
 
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
-  nd_lit|
-  nd_head|
-  nd_next|
+  nd_lit | VALUE |h1.value
+  nd_head | NODE |u1.node
+  nd_next | NODE |u2.node
 
 * NODE_EVSTR
 
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
-  nd_body|
+  nd_body | NODE |u2.node
 
 * NODE_DREGX
 
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
-  nd_lit|
-  nd_head|
-  nd_next|
+  nd_lit | VALUE |h1.value
+  nd_head | NODE |u1.node
+  nd_next | NODE |u2.node
 
 * NODE_ONCE
 
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
-  nd_body|
+  nd_body | NODE |u2.node
 
 * NODE_ARGS
 
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
-  nd_ainfo|
+  nd_ainfo | ARGS | u3.args
 
 * NODE_ARGS_AUX
 
@@ -495,147 +491,147 @@ TODO:
 
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
-  nd_body|
-  nd_next|
+  nd_body | NODE |u2.node
+  nd_next | NODE |u2.node
 
 * NODE_KW_ARG
 
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
-  nd_body|
-  nd_next|
+  nd_body | NODE |u2.node
+  nd_next | NODE |u2.node
 
 * NODE_POSTARG
 
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
-  nd_1st|
-  nd_2nd|
+  nd_1st | NODE |u1.node
+  nd_2nd | NODE |u2.node
 
 * NODE_ARGSCAT
 
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
-  nd_head|
-  nd_body|
+  nd_head | NODE |u1.node
+  nd_body | NODE |u2.node
 
 * NODE_ARGSPUSH
 
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
-  nd_head|
-  nd_body|
+  nd_head | NODE |u1.node
+  nd_body | NODE |u2.node
 
 * NODE_SPLAT
 
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
-  nd_head|
+  nd_head | NODE |u1.node
 
 * NODE_BLOCK_PASS
 
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
-  nd_head|
-  nd_body|
+  nd_head | NODE |u1.node
+  nd_body | NODE |u2.node
 
 * NODE_DEFN
 
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
-  nd_mid|
-  nd_defn|
+  nd_mid | ID | u2.id
+  nd_defn |NODE | u3.node
 
 * NODE_DEFS
 
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
-  nd_recv|
-  nd_mid|
-  nd_defn|
+  nd_recv | NODE |u1.node
+  nd_mid | ID | u2.id
+  nd_defn |NODE | u3.node
 
 * NODE_ALIAS
 
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
-  nd_1st|
-  nd_2nd|
+  nd_1st | NODE | u1.node
+  nd_2nd | NODE | u2.node
 
 * NODE_VALIAS
 
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
-  nd_alias|
-  nd_orig|
+  nd_alias | ID | u1.id
+  nd_orig | ID | u2.id
 
 * NODE_UNDEF
 
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
-  nd_undef|
+  nd_undef | NODE | u2.node
 
 * NODE_CLASS
 
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
-  nd_cpath|
-  nd_super|
-  nd_body|
+  nd_cpath |NODE | u1.node
+  nd_super |NODE | u3.node
+  nd_body | NODE |u2.node
 
 * NODE_MODULE
 
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
-  nd_cpath|
-  nd_body|
+  nd_cpath |NODE | u1.node
+  nd_body | NODE |u2.node
 
 * NODE_SCLASS
 
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
-  nd_recv|
-  nd_body|
+  nd_recv | NODE |u1.node
+  nd_body | NODE |u2.node
 
 * NODE_COLON2
 
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
-  nd_head|
-  nd_mid|
+  nd_head | NODE |u1.node
+  nd_mid | ID | u2.id
 
 * NODE_COLON3
 
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
-  nd_mid|
+  nd_mid | ID | u2.id
 
 * NODE_DOT2
 
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
-  nd_beg|
-  nd_end|
+  nd_beg |NODE | u1.node
+  nd_end |NODE | u2.node
 
 * NODE_DOT3
 
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
-  nd_beg|
-  nd_end|
+  nd_beg |NODE | u1.node
+  nd_end |NODE | u2.node
 
 * NODE_FLIP2
 
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
-  nd_beg|
-  nd_end|
+  nd_beg |NODE | u1.node
+  nd_end |NODE | u2.node
 
 * NODE_FLIP3
 
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
-  nd_beg|
-  nd_end|
+  nd_beg |NODE | u1.node
+  nd_end |NODE | u2.node
 
 * NODE_SELF
 
@@ -666,47 +662,47 @@ TODO:
 
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
-  nd_head|
+  nd_head | NODE |u1.node
 
 * NODE_POSTEXE
 
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
-  nd_body|
+  nd_body | NODE |u2.node
 
 * NODE_DSYM
 
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
-  nd_lit|
-  nd_next|
+  nd_lit | VALUE |h1.value
+  nd_next | NODE |u2.node
 
 * NODE_ATTRASGN
 
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
-  nd_recv|
-  nd_mid|
-  nd_args|
+  nd_recv | NODE |u1.node
+  nd_mid | ID | u2.id
+  nd_args | NODE |u3.node
 
 * NODE_LAMBDA
 
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
-  nd_body|
+  nd_body | NODE |u2.node
 
 * NODE_ARYPTN
 
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
-  nd_apinfo|
-  nd_pconst|
+  nd_apinfo| apinfo | u3.apinfo
+  nd_pconst| NODE | u1.node
 
 * NODE_HSHPTN
 
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
-  nd_pkwrestarg|
+  nd_pkwrestarg| NODE | u3.node
 
 * NODE_LAST
 
