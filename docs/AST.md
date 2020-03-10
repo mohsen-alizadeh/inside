@@ -92,6 +92,7 @@ ruby parses program's code and generate a syntax tree called AST. List of node t
   nd_body | NODE | u2.node
 
 * NODE_FOR
+
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
   nd_iter | NODE | u3.node
@@ -101,16 +102,21 @@ ruby parses program's code and generate a syntax tree called AST. List of node t
 
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
+  nd_head | NODE | u1.node
+  nd_value | NODE | u2.node
+  nd_args | NODE | u3.node
 
 * NODE_BREAK
 
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
+  nd_stts | NODE | u1.node
 
 * NODE_NEXT
 
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
+  nd_stts | NODE | u1.node
 
 * NODE_REDO
 
@@ -126,50 +132,73 @@ ruby parses program's code and generate a syntax tree called AST. List of node t
 
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
+  nd_body | NODE | u2.node
 
 * NODE_RESCUE
 
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
+  nd_head | NODE | u1.node
+  nd_resq | NODE | u2.node
+  nd_else | NODE | u3.node
 
 * NODE_RESBODY
+
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
+  nd_head | NODE | u1.node
+  nd_body | NODE | u2.node
+  nd_args | NODE | u3.node 
 
 * NODE_ENSURE
 
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
+  nd_head | NODE | u1.node
+  nd_ensr | NODE | u3.node 
 
 * NODE_AND
 
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
+  nd_1st | NODE | u1.node
+  nd_2nd | NODE | u2.node
 
 * NODE_OR
 
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
+  nd_1st | NODE | u1.node
+  nd_2nd | NODE | u2.node
 
 * NODE_MASGN
 
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
+  nd_head | NODE | u1.node
+  nd_value | NODE | u2.node
+  nd_args | NODE | u3.node
 
 * NODE_LASGN
 
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
+  nd_vid  | ID | u1.id
+  nd_value | NODE | u2.node
 
 * NODE_DASGN
 
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
+  nd_vid  | ID | u1.id
+  nd_value | NODE | u2.node
 
 * NODE_DASGN_CURR
 
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
+  nd_vid  | ID | u1.id
+  nd_value | NODE | u2.node
 
 * NODE_GASGN
 
@@ -180,26 +209,41 @@ ruby parses program's code and generate a syntax tree called AST. List of node t
 
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
+  nd_vid  | ID | u1.id
+  nd_value | NODE | u2.node
 
 * NODE_CDECL
 
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
+  nd_vid  | ID | u1.id
+  nd_value | NODE | u2.node
+  nd_mid | ID | u2.id
+  nd_else | NODE | u3.node
 
 * NODE_CVASGN
 
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
+  nd_vid  | ID | u1.id
+  nd_value | NODE | u2.node
 
 * NODE_OP_ASGN1
 
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
+  nd_recv | NODE | u1.node
+  nd_mid | ID | u2.id
+  nd_args | NODE | u3.node
 
 * NODE_OP_ASGN2
 
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
+  nd_recv | NODE | u1.node
+  nd_value | NODE | u2.node
+  nd_next | NODE | u3.node
+  
 
 * NODE_OP_ASGN_AND
 
@@ -275,6 +319,7 @@ ruby parses program's code and generate a syntax tree called AST. List of node t
 
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
+  nd_stts | NODE | u1.node
 
 * NODE_YIELD
 
