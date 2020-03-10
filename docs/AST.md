@@ -249,41 +249,61 @@ ruby parses program's code and generate a syntax tree called AST. List of node t
 
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
+  nd_head|
+  nd_value|
+
 
 * NODE_OP_ASGN_OR
 
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
+  nd_head|
+  nd_value|
 
 * NODE_OP_CDECL
 
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
+  nd_head|
+  nd_aid|
+  nd_value|
 
 * NODE_CALL
 
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
+  nd_recv|
+  nd_mid|
+  nd_args|
 
 * NODE_OPCALL
 
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
+  nd_recv|
+  nd_mid|
+  nd_args|
 
 * NODE_FCALL
 
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
+  nd_mid|
+  nd_args|
 
 * NODE_VCALL
 
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
+  nd_mid|
 
 * NODE_QCALL
 
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
+  nd_recv|
+  nd_mid|
+  nd_args|
 
 * NODE_SUPER
 
@@ -294,14 +314,18 @@ ruby parses program's code and generate a syntax tree called AST. List of node t
 
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
+  nd_args| 
 
 * NODE_LIST
 
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
+  nd_head|
+  nd_next|
 
 * NODE_ZLIST
 
+TODO:
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
 
@@ -309,11 +333,14 @@ ruby parses program's code and generate a syntax tree called AST. List of node t
 
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
+  nd_head|
+  nd_next|
 
 * NODE_HASH
 
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
+  nd_head|
 
 * NODE_RETURN
 
@@ -325,43 +352,54 @@ ruby parses program's code and generate a syntax tree called AST. List of node t
 
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
+  nd_head|
 
 * NODE_LVAR
 
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
+  nd_vid|
 
 * NODE_DVAR
 
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
+  nd_vid|
 
 * NODE_GVAR
 
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
+  nd_vid|
 
 * NODE_IVAR
 
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
+  nd_vid|
 
 * NODE_CONST
 
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
+  nd_vid|
 
 * NODE_CVAR
 
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
+  nd_vid|
 
 * NODE_NTH_REF
+
+TODO:
 
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
 
 * NODE_BACK_REF
+
+TODO:
 
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
@@ -370,151 +408,307 @@ ruby parses program's code and generate a syntax tree called AST. List of node t
 
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
+  nd_lit|
 
 * NODE_MATCH2
 
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
+  nd_recv|
+  nd_value|
+  nd_args|
 
 * NODE_MATCH3
 
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
+  nd_recv|
+  nd_value|
 
 * NODE_LIT
 
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
+  nd_lit|
 
 * NODE_STR
 
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
+  nd_lit|
 
 * NODE_DSTR
 
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
+  nd_lit|
+  nd_head|
+  nd_next|
+
 * NODE_XSTR
+
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
+  nd_lit|
+
 * NODE_DXSTR
+
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
+  nd_lit|
+  nd_head|
+  nd_next|
+
 * NODE_EVSTR
+
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
+  nd_body|
+
 * NODE_DREGX
+
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
+  nd_lit|
+  nd_head|
+  nd_next|
+
 * NODE_ONCE
+
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
+  nd_body|
+
 * NODE_ARGS
+
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
+  nd_ainfo|
+
 * NODE_ARGS_AUX
+
+
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
+
 * NODE_OPT_ARG
+
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
+  nd_body|
+  nd_next|
+
 * NODE_KW_ARG
+
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
+  nd_body|
+  nd_next|
+
 * NODE_POSTARG
+
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
+  nd_1st|
+  nd_2nd|
+
 * NODE_ARGSCAT
+
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
+  nd_head|
+  nd_body|
+
 * NODE_ARGSPUSH
+
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
+  nd_head|
+  nd_body|
+
 * NODE_SPLAT
+
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
+  nd_head|
+
 * NODE_BLOCK_PASS
+
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
+  nd_head|
+  nd_body|
+
 * NODE_DEFN
+
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
+  nd_mid|
+  nd_defn|
+
 * NODE_DEFS
+
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
+  nd_recv|
+  nd_mid|
+  nd_defn|
+
 * NODE_ALIAS
+
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
+  nd_1st|
+  nd_2nd|
+
 * NODE_VALIAS
+
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
+  nd_alias|
+  nd_orig|
+
 * NODE_UNDEF
+
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
+  nd_undef|
+
 * NODE_CLASS
+
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
+  nd_cpath|
+  nd_super|
+  nd_body|
+
 * NODE_MODULE
+
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
+  nd_cpath|
+  nd_body|
+
 * NODE_SCLASS
+
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
+  nd_recv|
+  nd_body|
+
 * NODE_COLON2
+
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
+  nd_head|
+  nd_mid|
+
 * NODE_COLON3
+
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
+  nd_mid|
+
 * NODE_DOT2
+
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
+  nd_beg|
+  nd_end|
+
 * NODE_DOT3
+
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
+  nd_beg|
+  nd_end|
+
 * NODE_FLIP2
+
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
+  nd_beg|
+  nd_end|
+
 * NODE_FLIP3
+
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
+  nd_beg|
+  nd_end|
+
 * NODE_SELF
+
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
+
 * NODE_NIL
+
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
+
 * NODE_TRUE
+
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
+
 * NODE_FALSE
+
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
+
 * NODE_ERRINFO
+
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
+
 * NODE_DEFINED
+
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
+  nd_head|
+
 * NODE_POSTEXE
+
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
+  nd_body|
+
 * NODE_DSYM
+
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
+  nd_lit|
+  nd_next|
+
 * NODE_ATTRASGN
+
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
+  nd_recv|
+  nd_mid|
+  nd_args|
+
 * NODE_LAMBDA
+
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
+  nd_body|
+
 * NODE_ARYPTN
+
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
+  nd_apinfo|
+  nd_pconst|
+
 * NODE_HSHPTN
+
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
+  nd_pkwrestarg|
+
 * NODE_LAST
+
   ALIAS | TYPE | UNION FIELD
   --- | --- | ---
